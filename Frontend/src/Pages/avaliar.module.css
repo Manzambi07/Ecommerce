@@ -1,0 +1,156 @@
+/*LOGIN*/
+@keyframes entrarSms {
+    from {
+        opacity: 0;
+        transform: translateY(-20px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.Avaliar{
+    width: 60%;
+    height: auto;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 20px;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.div{
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-y: hidden;
+    padding: 20px;
+}
+
+.img{
+    width: 60px;
+    height: 60px;
+    border-radius: 70px;
+    border: 2px solid #03408f;
+    object-fit: cover;
+}
+
+.container{
+    position: relative;
+    width: 40%;
+    height: auto;
+    padding: 24px 20px 20px;
+    background-color: rgb(248, 248, 245);
+    border-radius: 20px;
+    box-shadow: 0px 0px 2px 1px rgb(227, 227, 227);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    opacity: 0;
+    animation: entrarSms 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container:hover{
+    transform: translateY(-6px);
+    box-shadow: 0px 8px 24px rgba(3, 64, 143, 0.15);
+}
+
+.aspas{
+    position: absolute;
+    top: 16px;
+    right: 18px;
+    color: #03408f;
+    opacity: 0.15;
+}
+
+.estrelas{
+    display: flex;
+    gap: 3px;
+}
+
+.sms{
+    padding: 10px 0;
+}
+.sms>span{
+    font-style: italic;
+    line-height: 1.5;
+}
+
+.name{
+    display: flex;
+    padding: 0 10px;
+    flex-direction: column;
+}
+.name> span{
+    font-style: italic;
+}
+
+.perfil{
+    display: flex;
+    align-items: center;
+}
+
+.titulo{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    flex-direction: column;
+}
+.titulo> h1{
+    font-size: 30px;
+    font-family: 'century gothic';
+    color: rgb(22, 22, 127);
+}
+
+.btn{
+    padding: 7px;
+    border-radius: 5px;
+    outline: none;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    color: rgb(248, 247, 247);
+    background: #03408f;
+    border: 2px solid #03408f;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    margin-top: 20px;
+}
+
+.btn:hover{
+    transform: scale(1.05);
+    background: #022e66;
+
+
+}
+    @media(min-width:300px) and (max-width: 700px ) {
+
+    .Avaliar{
+    width: 90%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 20px;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+  .container{
+
+    width:100%;
+  }
+    }

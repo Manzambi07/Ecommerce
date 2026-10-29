@@ -1,0 +1,666 @@
+
+/* ---------- Listagem ---------- */
+
+.tableLugar{
+
+    width: 100%;
+    height: auto;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.barra{
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+/* pesquisa */
+
+.pesquisa{
+
+    position: relative;
+    flex: 1;
+    min-width: 240px;
+    max-width: 460px;
+}
+
+.pesquisa input{
+
+    width: 100%;
+    height: 46px;
+    box-sizing: border-box;
+    padding: 0 42px;
+    font-family: 'century gothic';
+    font-weight: 580;
+    color: black;
+    background-color: white;
+    outline: none;
+    border-radius: 12px;
+    border: 1px solid rgb(217, 217, 217);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pesquisa input::placeholder{
+
+    color: rgb(150, 150, 150);
+    font-weight: 500;
+}
+
+.pesquisa input:focus{
+
+    border-color: #03408f;
+    box-shadow: 0 0 0 3px rgba(3, 64, 143, 0.15);
+}
+
+.pesquisaIcone{
+
+    position: absolute;
+    top: 50%;
+    left: 14px;
+    transform: translateY(-50%);
+    color: dimgray;
+    pointer-events: none;
+    transition: color 0.2s ease;
+}
+
+.pesquisa:focus-within .pesquisaIcone{
+
+    color: #03408f;
+}
+
+.limpar{
+
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    transform: translateY(-50%);
+    display: flex;
+    padding: 6px;
+    border: none;
+    border-radius: 8px;
+    background: transparent;
+    color: dimgray;
+    cursor: pointer;
+}
+
+.limpar:hover{
+
+    background-color: rgb(240, 239, 239);
+}
+
+.contador{
+
+    font-family: 'century gothic';
+    font-size: 13px;
+    font-weight: 600;
+    color: dimgray;
+}
+
+/* tabela */
+
+.tabelaWrap{
+
+    width: 100%;
+    overflow-x: auto;
+    border-radius: 20px;
+    border: 2px solid rgb(206, 202, 202);
+    background-color: rgb(249, 251, 255);
+}
+
+.table{
+
+    width: 100%;
+    min-width: 640px;
+    border-collapse: collapse;
+    background-color: rgb(249, 251, 255);
+}
+
+.table thead tr th{
+
+    font-family: 'century gothic';
+    color: #0d0d0e;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    text-align: left;
+    padding: 16px 20px;
+    border-bottom: 1px solid rgb(110, 109, 109);
+    height: 60px;
+}
+
+.table tbody tr td{
+
+    font-family: 'Century gothic';
+    font-weight: 600;
+    text-align: left;
+    font-size: 15px;
+    padding: 12px 20px;
+    color: #0e0e0f;
+    border-bottom: 1px solid rgb(218, 218, 218);
+    height: 64px;
+}
+
+.table tbody tr:last-child td{
+
+    border-bottom: none;
+}
+
+.table tbody tr{
+
+    transition: background-color 0.15s ease;
+}
+
+.table tbody tr:hover{
+
+    background-color: rgba(3, 64, 143, 0.05);
+}
+
+.acoes{
+
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.icon{
+
+    display: block;
+}
+
+.iconBtn{
+
+    display: inline-flex;
+    padding: 8px;
+    border: none;
+    border-radius: 10px;
+    background: transparent;
+    color: black;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.iconBtn:hover{
+
+    background-color: rgb(236, 238, 243);
+}
+
+.editar:hover{
+
+    background-color: rgba(3, 64, 143, 0.12);
+    color: #03408f;
+}
+
+.apagar:hover{
+
+    background-color: rgba(231, 76, 60, 0.12);
+    color: #e74c3c;
+}
+
+.vazio{
+
+    text-align: center !important;
+    color: dimgray !important;
+    padding: 48px 20px !important;
+    font-weight: 500 !important;
+}
+
+.linkBtn{
+
+    border: none;
+    background: none;
+    padding: 0;
+    color: #03408f;
+    font-family: 'century gothic';
+    font-size: inherit;
+    font-weight: 700;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* ---------- Cabeçalho do formulário ---------- */
+
+.cabecalho{
+
+    padding: 24px 24px 0;
+}
+
+.cabecalho h2{
+
+    margin: 0;
+    font-family: 'century gothic';
+    font-size: 20px;
+    font-weight: 700;
+    color: #0d0d0e;
+}
+
+.cabecalho p{
+
+    margin: 4px 0 0;
+    font-family: 'century gothic';
+    font-size: 14px;
+    color: dimgray;
+}
+
+/* ---------- Campos ---------- */
+
+.inputs{
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    padding: 20px 24px 24px;
+}
+
+.inputs > div{
+
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 0;
+}
+
+.largo{
+
+    grid-column: 1 / -1;
+}
+
+.inputs label{
+
+    font-family: 'century gothic';
+    font-size: 13px;
+    font-weight: 600;
+    color: #333;
+}
+
+.inputs select{
+
+    padding: 0 14px;
+    width: 100%;
+    height: 46px;
+    box-sizing: border-box;
+    font-family: 'century gothic';
+    font-weight: 580;
+    outline: none;
+    border-radius: 10px;
+    color: black;
+    border: 1px solid rgb(217, 217, 217);
+    box-shadow: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    
+
+}
+/* Fallback: funciona em todos os navegadores */
+.inputs select > option {
+    background-color: #022756;
+    color: white;
+    font-weight: bold;
+}
+
+/* Melhoria: Chrome/Edge com select personalizável */
+@supports (appearance: base-select) {
+
+    .inputs select,
+    .inputs select::picker(select) {
+        appearance: base-select;
+    }
+
+    /* a caixa da lista */
+    .inputs select::picker(select) {
+        background-color: #022756;
+        border: 1px solid rgb(217, 217, 217);
+        border-radius: 12px;
+        padding: 6px;
+        margin-top: 4px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    }
+
+    /* cada opção */
+    .inputs select > option {
+        border-radius: 8px;
+        padding: 10px 12px;
+        font-family: 'century gothic';
+        transition: background-color 0.15s ease;
+    }
+
+    .inputs select > option:hover,
+    .inputs select > option:focus {
+        background-color: rgba(255, 255, 255, 0.15);
+    }
+
+    .inputs select > option:checked {
+        background-color: rgba(255, 255, 255, 0.25);
+    }
+
+    /* seta do select a rodar ao abrir */
+    .inputs select::picker-icon {
+        transition: rotate 0.2s ease;
+    }
+    .inputs select:open::picker-icon {
+        rotate: 180deg;
+    }
+}
+.inputs input{
+
+    padding: 0 14px;
+    width: 100%;
+    height: 46px;
+    box-sizing: border-box;
+    font-family: 'century gothic';
+    font-weight: 580;
+    outline: none;
+    border-radius: 10px;
+    color: black;
+    border: 1px solid rgb(217, 217, 217);
+    box-shadow: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.inputs input:hover{
+
+    border-color: rgb(170, 170, 170);
+}
+
+.inputs input:focus{
+
+    border-color: #03408f;
+    box-shadow: 0 0 0 3px rgba(3, 64, 143, 0.15);
+}
+
+.inputs input[aria-invalid="true"]{
+
+    border-color: #e74c3c;
+}
+
+.inputs input[aria-invalid="true"]:focus{
+
+    box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.15);
+}
+
+.senhaBox{
+
+    position: relative;
+}
+
+.senhaBox input{
+
+    padding-right: 44px;
+}
+
+.olho{
+
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    transform: translateY(-50%);
+    display: flex;
+    padding: 6px;
+    border: none;
+    border-radius: 8px;
+    background: transparent;
+    color: dimgray;
+    cursor: pointer;
+}
+
+.olho:hover{
+
+    background-color: rgb(240, 239, 239);
+}
+
+.erroCampo{
+
+    font-family: 'century gothic';
+    font-size: 12px;
+    font-weight: 600;
+    color: #e74c3c;
+}
+
+/* força da senha */
+
+.forca{
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.forcaBarras{
+
+    display: flex;
+    flex: 1;
+    gap: 4px;
+}
+
+.forcaBarras span{
+
+    flex: 1;
+    height: 5px;
+    border-radius: 3px;
+    background-color: rgb(230, 230, 230);
+    transition: background-color 0.25s ease;
+}
+
+.forca small{
+
+    min-width: 64px;
+    text-align: right;
+    font-family: 'century gothic';
+    font-size: 12px;
+    font-weight: 600;
+    color: dimgray;
+}
+
+.forca[data-nivel="0"] .forcaBarras span:nth-child(-n+1),
+.forca[data-nivel="1"] .forcaBarras span:nth-child(-n+1){ background-color: #e74c3c; }
+.forca[data-nivel="2"] .forcaBarras span:nth-child(-n+2){ background-color: #f0a202; }
+.forca[data-nivel="3"] .forcaBarras span:nth-child(-n+3){ background-color: #5aa469; }
+.forca[data-nivel="4"] .forcaBarras span:nth-child(-n+4){ background-color: #2e9e5b; }
+
+/* email + botão "Enviar código" */
+
+.linhaAcao{
+
+    display: flex;
+    gap: 8px;
+}
+
+.linhaAcao input{
+
+    flex: 1;
+    min-width: 0;
+}
+
+.acao{
+
+    height: 46px;
+    padding: 0 14px;
+    border-radius: 10px;
+    border: 2px solid #03408f;
+    background-color: white;
+    color: #03408f;
+    font-family: 'century gothic';
+    font-size: 13px;
+    font-weight: 700;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.acao:hover:not(:disabled){
+
+    background-color: #03408f;
+    color: white;
+}
+
+.acao:disabled{
+
+    opacity: 0.6;
+    cursor: wait;
+}
+
+/* ---------- Botões de envio ---------- */
+
+.btn{
+
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 12px;
+    padding-top: 4px;
+    padding: 20px;
+}
+
+.button{
+
+    flex: 1;
+    padding: 12px;
+    border-radius: 8px;
+    outline: none;
+    font-weight: bold;
+    font-size: 14px;
+    font-family: 'century gothic';
+    cursor: pointer;
+    color: rgb(248, 247, 247);
+    background: #03408f;
+    border: 2px solid #03408f;
+    transition: background-color 0.3s ease, color 0.3s ease, filter 0.2s ease;
+}
+
+.button:hover:not(:disabled){
+
+    filter: brightness(0.92);
+}
+
+.button:disabled{
+
+    opacity: 0.6;
+    cursor: wait;
+}
+
+.secundario{
+
+    background: white;
+    color: #03408f;
+}
+
+.secundario:hover:not(:disabled){
+
+    background: #03408f;
+    color: white;
+    filter: none;
+}
+
+.formulario{
+
+    padding: 20px;
+    height: 100%;
+    width: 100%;
+}
+
+.painel{
+
+    animation: entrar 0.25s ease;
+}
+
+@keyframes entrar{
+
+    from{ opacity: 0; transform: translateY(6px); }
+    to{ opacity: 1; transform: translateY(0); }
+}
+/* ---------- Abas ---------- */
+
+.menu{
+
+    width: 100%;
+    padding-top: 24px;
+    border-bottom: 3px solid #03408f;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    gap: 6px;
+}
+
+.menu > button{
+
+    background-color: transparent;
+    color: black;
+    padding: 12px 22px;
+    border: none;
+    border-radius: 10px 10px 0 0;
+    font-family: 'century gothic';
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.menu > button:hover,
+.menu > button.ativo{
+
+    background-color: #03408f;
+    color: white;
+}
+
+
+/* ---------- Foto ---------- */
+
+.img{
+
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px 24px 0;
+}
+
+.img > img{
+
+    width: 64px;
+    height: 64px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: rgb(243, 243, 243);
+    border: 1px solid rgb(208, 207, 207);
+}
+
+.img > div{
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+}
+
+.rotuloFoto{
+
+    font-family: 'century gothic';
+    font-size: 13px;
+    font-weight: 600;
+    color: #333;
+}
+
+.escolher{
+
+    display: inline-flex;
+    padding: 7px 14px;
+    border-radius: 8px;
+    border: 2px solid #03408f;
+    background-color: white;
+    color: #03408f;
+    font-family: 'century gothic';
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.escolher:hover{
+
+    background-color: #03408f;
+    color: white;
+}

@@ -1,0 +1,30 @@
+.layout {
+    display: grid;
+    grid-template-areas: 'f h'
+                         'f l';
+    grid-template-columns: var(--panel-largura, 270px) 1fr;
+    grid-template-rows: auto 1fr;
+    width: 100%;
+    height: 100vh;
+    transition: grid-template-columns 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+    overflow: hidden;
+    min-height: 0;
+}
+
+.rotas {
+    min-width: 0;
+    min-height: 0;
+    overflow-y: auto;
+    grid-area: l;
+    padding: 24px;
+}
+
+.layout1 {
+
+    grid-area: h;
+}
+
+.layout2 {
+
+    grid-area: f;
+}

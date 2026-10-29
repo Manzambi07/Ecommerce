@@ -1,0 +1,254 @@
+/*LOGIN*/
+@keyframes entrarSms {
+        from {
+            opacity: 0;
+            transform: translateY(-20px) scale(0.95);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+    }
+
+/* fundo escuro que centra o cartão */
+.fundo{
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    display: flex;
+    padding: 16px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    background-color: rgba(0, 0, 0, 0.45);
+}
+
+.login{
+    animation: entrarSms 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+
+    position: relative;
+    margin: auto;
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height:auto;
+    border-radius: 14px;
+    padding: 20px;
+    background-color: rgb(253, 253, 253);
+    border: 1px solid rgb(235, 235, 235);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+
+}
+
+.topo{
+
+    display: flex;
+    justify-content: flex-end;
+}
+
+.fechar{
+
+    display: flex;
+    padding: 4px;
+    border: none;
+    border-radius: 8px;
+    background: transparent;
+    cursor: pointer;
+}
+
+.fechar:hover{
+
+    background-color: rgb(240, 239, 239);
+}
+
+.Titulo{
+
+    display:flex;
+    justify-content: center;
+    padding: 8px 20px;
+
+}
+.Titulo> img{
+         width: 70px;
+         height: 70px;
+}
+
+.titulo2{
+
+    margin: 0;
+    text-align: center;
+    font-family: 'century gothic';
+    font-size: 20px;
+    font-weight: 700;
+    color: #1f1f1f;
+}
+
+.Credencias{
+    padding: 16px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.campo{
+
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.campo label{
+
+    font-family: 'century gothic';
+    font-size: 13px;
+    font-weight: 600;
+    color: #333;
+}
+
+.input {
+
+    padding: 0 14px;
+    width: 100%;
+    height: 46px;
+    box-sizing: border-box;
+    font-family:'century gothic';
+    font-weight: 540;
+    outline: none;
+    border-radius: 10px;
+    color: black;
+    border: 1px solid rgb(188, 187, 186);
+    box-shadow: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+}
+
+.input:focus{
+
+    border-color: #03408f;
+    box-shadow: 0 0 0 3px rgba(3, 64, 143, 0.15);
+}
+
+/* campo da senha com botão de mostrar/esconder */
+.senhaBox{
+
+    position: relative;
+}
+
+.senhaBox .input{
+
+    padding-right: 44px;
+}
+
+.olho{
+
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    transform: translateY(-50%);
+    display: flex;
+    padding: 6px;
+    border: none;
+    border-radius: 8px;
+    background: transparent;
+    color: dimgray;
+    cursor: pointer;
+}
+
+.olho:hover{
+
+    background-color: rgb(240, 239, 239);
+}
+
+.submter{
+    padding: 4px 20px 8px;
+}
+.submter> button{
+
+    padding: 12px;
+    border-radius: 8px;
+    outline: none;
+    font-weight: bold;
+    font-size: 14px;
+    font-family: 'century gothic';
+    cursor: pointer;
+    color: rgb(248, 247, 247);
+    background: #03408f;
+    border: 2px solid #03408f;
+    transition: background-color 0.3s ease, color 0.3s ease, filter 0.2s ease;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.submter> button:hover:not(:disabled){
+
+    filter: brightness(0.92);
+}
+
+.submter> button:disabled{
+
+    opacity: 0.6;
+    cursor: wait;
+}
+
+.submter> button:focus-visible,
+.olho:focus-visible,
+.fechar:focus-visible,
+.recuperar> button:focus-visible{
+
+    outline: 2px solid #03408f;
+    outline-offset: 2px;
+}
+
+.recuperar{
+
+    display: flex;
+    justify-content: center;
+    padding: 4px 0;
+}
+
+.recuperar> button{
+
+    border: none;
+    background: transparent;
+    color: #03408f;
+    font-family: 'century gothic';
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.recuperar> button:hover{
+
+    text-decoration: underline;
+}
+
+@media(min-width:300px) and (max-width: 700px ) {
+
+.fundo{
+
+    padding: 12px;
+}
+
+.login{
+
+    padding: 16px;
+}
+
+.Credencias{
+
+    padding: 12px 4px;
+}
+
+.submter{
+
+    padding: 4px 4px 8px;
+}
+
+}

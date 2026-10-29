@@ -1,0 +1,32 @@
+@keyframes entrarSms {
+        from {
+            opacity: 0;
+            transform: translateY(-20px) scale(0.95);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+    }
+.principal{
+            animation: entrarSms 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+
+     width:100%;
+    height:500px;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+
+}
+.principal> div{
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: flex-start;
+    padding: 20px;
+}
+.principal div > span{
+
+    margin-left: 7px;
+}

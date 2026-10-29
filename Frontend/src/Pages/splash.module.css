@@ -1,0 +1,98 @@
+/* ocupa SEMPRE o ecrã todo, mesmo com o padding-top do body no mobile */
+.tela{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2000;
+    box-sizing: border-box;
+    padding: 20px;
+    background-color: #03408f;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+
+}
+
+.tela.saindo{
+
+    animation: sumir 0.4s ease forwards;
+}
+
+.box{
+
+    width: 70px;
+    height: 70px;
+    animation: entrarSms 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+               pulsar 1.6s ease-in-out 0.45s infinite;
+
+}
+
+.tela> h1{
+
+    margin: 0;
+    color: white;
+    font-family: 'century gothic';
+    font-size: clamp(16px, 4vw, 20px);
+    font-weight: 600;
+}
+
+/* barra de carregamento */
+.barra{
+
+    width: min(180px, 60vw);
+    height: 4px;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+.barra::after{
+
+    content: '';
+    display: block;
+    height: 100%;
+    width: 40%;
+    border-radius: 4px;
+    background-color: white;
+    animation: deslizar 1.1s ease-in-out infinite;
+}
+
+
+@keyframes entrarSms {
+        from {
+            opacity: 0;
+            transform: translateY(-20px) scale(0.95);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+    }
+
+@keyframes pulsar {
+        0%, 100% { transform: scale(1); }
+        50%      { transform: scale(1.12); }
+    }
+
+@keyframes deslizar {
+        0%   { transform: translateX(-100%); }
+        100% { transform: translateX(250%); }
+    }
+
+@keyframes sumir {
+        from { opacity: 1; }
+        to   { opacity: 0; }
+    }
+
+@media (prefers-reduced-motion: reduce) {
+
+    .box,
+    .barra::after {
+        animation: none;
+    }
+}

@@ -1,0 +1,413 @@
+label,
+span,
+h1 {
+    color: black;
+    font-weight: 590;
+    font-size: 14px;
+    font-family: 'century gothic'
+
+}
+
+@keyframes entrarSms {
+    from {
+        opacity: 0;
+        transform: translateY(-20px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.Carrinho {
+
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(250, 248, 248);
+    animation: entrarSms 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+
+}
+
+.info {
+    grid-area: f;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px;
+    width:30%;
+}
+
+.confirmar {
+    grid-area: d;
+    padding: 40px;
+    width: 60%;
+    
+}
+
+.confirmar>div {
+
+    padding: 7px;
+    width: 100%;
+
+}
+
+/* ---------- Lista + resumo (duas colunas) ---------- */
+
+.itens {
+    grid-area: g;
+    padding: 32px 24px;
+    width: 100%;
+    max-width: 1100px;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 340px;
+    gap: 24px;
+    align-items: start;
+}
+
+.prod {
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-width: 0;
+
+}
+
+.cabecalho {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding: 0 4px 4px;
+}
+
+.cabecalho h1 {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.cabecalho span {
+    color: dimgray;
+}
+
+.vazio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 56px 20px;
+    background: #fff;
+    border: 1px dashed rgb(210, 209, 209);
+    border-radius: 14px;
+}
+
+.vazio span {
+    color: dimgray;
+    font-size: 15px;
+}
+
+/* ---------- Item do carrinho ---------- */
+
+.Lista {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 14px;
+    background: #fff;
+    border: 1px solid rgb(228, 227, 227);
+    border-radius: 14px;
+}
+
+.img {
+    flex-shrink: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.img>img {
+    display: block;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.price {
+
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    justify-content: center;
+    padding: 0;
+
+}
+
+.price>span {
+
+    font-weight: 590;
+    font-size: 14px;
+    font-family: 'century gothic'
+}
+
+.price>.nome {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.price>.desc,
+.price>.unit {
+    color: dimgray;
+}
+
+.price>.subItem {
+    color: #03408f;
+    font-weight: 700;
+}
+
+.qtd {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0;
+    margin-left: auto;
+}
+
+.lixo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    border: none;
+    border-radius: 8px;
+    background: transparent;
+    cursor: pointer;
+}
+
+.lixo:hover {
+    background: rgb(240, 239, 239);
+}
+
+.stepper {
+    display: flex;
+    align-items: center;
+    border: 1px solid dimgrey;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.stepper>button {
+    width: 32px;
+    height: 34px;
+    border: none;
+    background: rgb(243, 243, 243);
+    color: black;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.stepper>button:hover:not(:disabled) {
+    background: rgb(229, 229, 229);
+}
+
+.stepper>button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.stepper>input {
+    width: 46px;
+    height: 34px;
+    padding: 0;
+    border: none;
+    text-align: center;
+    color: black;
+    font-family: 'century gothic';
+    font-weight: 600;
+    outline: none;
+    -moz-appearance: textfield;
+}
+
+.stepper>input::-webkit-outer-spin-button,
+.stepper>input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* ---------- Resumo ---------- */
+
+.totais {
+
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border: 1px solid rgb(228, 227, 227);
+    border-radius: 14px;
+    overflow: hidden;
+    position: sticky;
+    top: 20px;
+}
+
+.resumo {
+    padding: 20px 20px 6px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.totais>div {
+
+    display: flex;
+    justify-content: space-between;
+    padding: 14px 20px;
+}
+
+.totais div>span {
+
+    font-weight: 590;
+    font-size: 14px;
+    font-family: 'century gothic'
+}
+
+.total {
+
+
+    border-bottom: 1px solid rgb(222, 220, 220);
+    border-top: 1px solid rgb(214, 212, 212);
+
+}
+
+.totais .total>span {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+/* ---------- Campos e botões ---------- */
+
+.input {
+
+    padding: 17px;
+    width: 100%;
+    height: 30px;
+    font-family: sans-serif;
+    outline: none;
+    border-radius: 5px;
+    color: black;
+    border: 1px solid rgb(188, 187, 186);
+    box-shadow: none;
+
+}
+
+.input1 {
+
+    padding: 17px;
+    width: 98%;
+    height: 30px;
+    font-family: sans-serif;
+    outline: none;
+    border-radius: 5px;
+    color: black;
+    border: 1px solid rgb(188, 187, 186);
+    box-shadow: none;
+}
+
+.btn {
+
+    padding: 12px;
+    border-radius: 8px;
+    outline: none;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    color: rgb(248, 247, 247);
+    background: #03408f;
+    border: 2px solid #03408f;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    width: 100%;
+
+}
+
+.btn:hover:not(:disabled) {
+    filter: brightness(0.92);
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* ---------- Mobile ---------- */
+
+@media(min-width:300px) and (max-width: 700px) {
+
+    .Carrinho {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        animation: entrarSms 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+        padding-top: 90px;
+
+
+    }
+
+    .info {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 40px;
+
+    }
+
+    .confirmar {
+        grid-area: d;
+        padding: 40px;
+        width: 100%;
+
+
+    }
+
+    .itens {
+        grid-area: g;
+        padding: 20px 14px;
+        width: 100%;
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .Lista {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .img>img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .qtd {
+        flex: 0 0 100%;
+        flex-direction: row;
+        align-items: center;
+        align-self: auto;
+        margin-left: 0;
+        padding-top: 10px;
+        border-top: 1px solid rgb(235, 234, 234);
+    }
+
+    .totais {
+        width: 100%;
+        box-sizing: border-box;
+        position: static;
+    }
+
+    .prod {
+        width: 100%;
+    }
+
+}

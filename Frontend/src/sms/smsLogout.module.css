@@ -1,0 +1,167 @@
+.sms {
+    position: fixed;
+    top: 110px;
+    right: 16px;
+    z-index: 100;
+    width: min(340px, calc(100vw - 32px));
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px 16px 20px;
+    background-color: white;
+    border-radius: 14px;
+    border-left: 4px solid #03408f;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+    overflow: hidden;
+
+    /* animação de entrada */
+    animation: entrarSms 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.sms.saindo {
+    animation: sairSms 0.4s ease forwards;
+}
+
+@keyframes entrarSms {
+    from {
+        opacity: 0;
+        transform: translateY(-20px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes sairSms {
+    from {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(-15px) scale(0.95);
+    }
+}
+
+.sms.erro    { border-left-color: #e74c3c; }
+.sms.sucesso { border-left-color: #2ecc71; }
+.sms.alerta  { border-left-color: #f39c12; }
+
+.corpo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.sms img {
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
+}
+
+.sms span {
+    flex: 1;
+    font-weight: 500;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #1f1f1f;
+}
+
+.acoes {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+/* barra de progresso (a duração vem da prop "duracao") */
+.sms-progresso {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+.sms-progresso::after {
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    background-color: #03408f;
+    transform-origin: left;
+    animation: encolher var(--duracao, 4000ms) linear forwards;
+}
+
+.sms.erro .sms-progresso::after    { background-color: #e74c3c; }
+.sms.sucesso .sms-progresso::after { background-color: #2ecc71; }
+.sms.alerta .sms-progresso::after  { background-color: #f39c12; }
+
+@keyframes encolher {
+    from { transform: scaleX(1); }
+    to   { transform: scaleX(0); }
+}
+
+.btn {
+
+    padding: 7px 18px;
+    border-radius: 8px;
+    background-color: rgb(243, 242, 240);
+    color: #03408f;
+    border: 2px solid #03408f;
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.1s ease;
+
+}
+
+.btn:hover {
+
+    color: white;
+    background-color: #03408f;
+}
+
+.cancelar {
+
+    padding: 7px 14px;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    background: transparent;
+    color: dimgray;
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.cancelar:hover {
+
+    background-color: rgb(243, 242, 240);
+}
+
+.btn:active,
+.cancelar:active {
+    transform: scale(0.97);
+}
+
+.btn:focus-visible,
+.cancelar:focus-visible {
+    outline: 2px solid #03408f;
+    outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .sms,
+    .sms.saindo {
+        animation-duration: 0.01ms;
+    }
+}

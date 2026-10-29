@@ -1,0 +1,19 @@
+
+*{
+
+ box-sizing: border-box;
+    font-weight:500;
+    margin: 0;
+    padding: 0;
+        overflow-x: hidden;
+
+
+}
+body { margin: 0; }
+.principal{
+
+    width:100vw;
+    display: flex;
+    flex-direction: column;
+
+}

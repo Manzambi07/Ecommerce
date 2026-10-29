@@ -1,0 +1,119 @@
+.sms {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        z-index: 100;
+        width: min(340px, calc(100vw - 40px));
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 14px 16px 18px;
+        background-color: white;
+        border-radius: 14px;
+        border-left: 4px solid #03408f;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+        overflow: hidden;
+
+        animation: entrarSms 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .sms.saindo {
+        animation: sairSms 0.4s ease forwards;
+    }
+
+    @keyframes entrarSms {
+        from {
+            opacity: 0;
+            transform: translateY(20px) scale(0.95);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+    }
+
+    @keyframes sairSms {
+        from {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+        to {
+            opacity: 0;
+            transform: translateY(15px) scale(0.95);
+        }
+    }
+
+    .sms.erro    { border-left-color: #e74c3c; }
+    .sms.sucesso { border-left-color: #2ecc71; }
+    .sms.alerta  { border-left-color: #f39c12; }
+
+    .sms img {
+        width: 34px;
+        height: 34px;
+        flex-shrink: 0;
+    }
+
+    .sms span {
+        flex: 1;
+        font-weight: 500;
+        font-family: "Poppins", sans-serif;
+        font-size: 14px;
+        line-height: 1.4;
+        color: #1f1f1f;
+    }
+
+    .x {
+        display: flex;
+        padding: 4px;
+        border: none;
+        border-radius: 8px;
+        background: transparent;
+        color: dimgray;
+        cursor: pointer;
+    }
+
+    .x:hover {
+        background-color: rgb(240, 239, 239);
+    }
+
+    .x:focus-visible {
+        outline: 2px solid #03408f;
+        outline-offset: 2px;
+    }
+
+    .sms-progresso {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 4px;
+        width: 100%;
+        background-color: rgba(0,0,0,0.15);
+    }
+
+    .sms-progresso::after {
+        content: "";
+        display: block;
+        height: 100%;
+        width: 100%;
+        background-color: #03408f;
+        transform-origin: left;
+        animation: encolher var(--duracao, 4000ms) linear forwards;
+    }
+
+    .sms.erro .sms-progresso::after    { background-color: #e74c3c; }
+    .sms.sucesso .sms-progresso::after { background-color: #2ecc71; }
+    .sms.alerta .sms-progresso::after  { background-color: #f39c12; }
+
+    @keyframes encolher {
+        from { transform: scaleX(1); }
+        to   { transform: scaleX(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+        .sms,
+        .sms.saindo {
+            animation-duration: 0.01ms;
+        }
+    }

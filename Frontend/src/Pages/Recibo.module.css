@@ -1,0 +1,214 @@
+/* ---------- Forma de pagamento (dentro do Resumo) ---------- */
+
+.metodos{
+
+    display: flex;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 8px;
+}
+
+.metodosTitulo{
+
+    font-family: 'century gothic';
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.metodosLinha{
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.metodo{
+
+    flex: 1;
+    min-width: 120px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 2px solid #03408f;
+    background-color: #fff;
+    color: #03408f;
+    font-family: 'century gothic';
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.metodo:hover{
+
+    background-color: rgba(3, 64, 143, 0.08);
+}
+
+.metodoAtivo,
+.metodoAtivo:hover{
+
+    background-color: #03408f;
+    color: #fff;
+}
+
+.metodo:focus-visible{
+
+    outline: 2px solid #03408f;
+    outline-offset: 2px;
+}
+
+/* ---------- Recibo ---------- */
+
+.pagina{
+
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 24px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    box-sizing: border-box;
+}
+
+.recibo{
+
+    background-color: #fff;
+    border: 1px solid rgb(217, 217, 217);
+    border-radius: 16px;
+    padding: 28px;
+    font-family: 'century gothic';
+    color: #0e0e0f;
+}
+
+.topo{
+
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    padding-bottom: 12px;
+    margin-bottom: 16px;
+    border-bottom: 3px solid #03408f;
+}
+
+.topo h1{
+
+    margin: 0;
+    font-size: 22px;
+}
+
+.topo span{
+
+    font-weight: 700;
+    color: #03408f;
+}
+
+.meta{
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.meta div{
+
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.meta span{
+
+    font-size: 12px;
+    font-weight: 600;
+    color: dimgray;
+}
+
+.meta strong{
+
+    font-size: 14px;
+}
+
+.tabela{
+
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 16px;
+}
+
+.tabela th{
+
+    padding: 10px 8px;
+    text-align: left;
+    font-size: 13px;
+    font-weight: 600;
+    border-bottom: 1px solid rgb(110, 109, 109);
+}
+
+.tabela td{
+
+    padding: 10px 8px;
+    font-size: 14px;
+    border-bottom: 1px solid rgb(228, 228, 228);
+}
+
+.tabela th:not(:first-child),
+.tabela td:not(:first-child){
+
+    text-align: right;
+}
+
+.totais{
+
+    width: min(100%, 300px);
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.totais div{
+
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+}
+
+.totais .totalFinal{
+
+    padding-top: 8px;
+    border-top: 2px solid #03408f;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.aviso{
+
+    margin: 20px 0 0;
+    padding: 12px 14px;
+    border-radius: 10px;
+    background-color: rgba(3, 64, 143, 0.08);
+    color: #03408f;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.acoes{
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.secundario{
+
+    background: #fff !important;
+    color: #03408f !important;
+    border: 2px solid #03408f !important;
+}
+
+@media (max-width: 480px){
+
+    .recibo{ padding: 18px; }
+}
